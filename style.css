@@ -1,0 +1,74 @@
+@viewport {
+  width: device-width;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+:root {
+  font-family: monospace;
+  font-size: 3rem;
+  font-weight: 600;
+}
+body {
+  background-color: #ffd547;
+}
+main {
+  width: 400px;
+  margin: 70px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.clockform {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  border-radius: 50%;
+  border: 5px solid black;
+  box-shadow: 0 0 3px #333;
+  background-color: #fff;
+}
+.clockform::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+}
+.zeiger {
+  height: 6px;
+  background: #000;
+  position: relative;
+  top: 205px;
+  left: 18.5%;
+  border-radius: 6px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.zeiger.hours {
+  width: 127px;
+  z-index: 3;
+}
+.zeiger.minutes {
+  height: 4px;
+  z-index: 10;
+  width: 127px;
+}
+.zeiger.seconds {
+  background: #0785fb;
+  width: 127px;
+  height: 2px;
+  z-index: 2;
+}
+#digital-display {
+  margin-top: 20px;
+}
